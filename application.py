@@ -76,11 +76,15 @@ def update(id):
         abort(400)
    
     # Info to update    
-    if 'Quantity' in request.json:
-        foundStock['Quantity'] = request.json['Quantity']
+    if 'Category' in reqJson:
+        foundStock['Category'] = reqJson['Category']
+    if 'Name' in reqJson:
+        foundStock['Name'] = reqJson['Name']
+    if 'Quantity' in reqJson:
+        foundStock['Quantity'] = reqJson['Quantity']
 
     # Make the tuple for DB
-    values = ( foundStock['Quantity'], foundStock['id'])
+    values = (foundStock['Name'],foundStock['Quantity'], foundStock['id'])
     # Do the update on DB
     stockDAO.update(values)
     return jsonify(foundStock)
