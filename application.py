@@ -2,7 +2,7 @@ from flask import Flask, url_for, request, redirect, abort, jsonify, json
 from StockDAO import stockDAO
 from flask_cors import CORS
 
-import requests
+#import requests
 app  = Flask(__name__, static_url_path='', static_folder='.')
 CORS(app)
 
